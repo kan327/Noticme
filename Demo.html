@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="hello()">greetings hello!</button>
+    <button onclick="confirmYourChoose()">Confirm Your Choose</button>
+    <button onclick="yourName()">Your Name?</button>
+    <button>Hello There!</button>
+
+    <script src="Notic.me.min.js"></script>
+    
+    <script>
+        Noticme.any({
+            text: "hello, There",
+            messege: "this is second text",
+            timer: 5000,
+            type: "success",
+        })
+        function hello(){
+        }
+        function confirmYourChoose(){
+            Noticme.any({
+                text: "This is cool a notification right?",
+                messege: "what about you?",
+                type: "info",
+                confirm: true,
+            })
+        }
+        function yourName(){
+            Noticme.any({
+                text: "What Your Name?",
+                messege: "can u tell me?",
+                type: "info",
+                icon: "settings",
+                input: true,
+            }).then (response => {
+            })
+        }
+    </script>
+</body>
+</html>
