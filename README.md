@@ -12,8 +12,8 @@ Metode utama Noticme yang dapat menampilkan notifikasi dengan berbagai pilihan o
 * `multiple` (boolean): Menentukan apakah notifikasi yang muncul dapat ditampilkan lebih dari satu atau tidak. Nilai yang diterima adalah `true` atau `false`.
 * `confirm` (boolean): Menentukan apakah notifikasi yang muncul membutuhkan konfirmasi dari pengguna atau tidak. Nilai yang diterima adalah `true` atau `false`.
 * `input` (boolean): Menentukan apakah notifikasi yang muncul memerlukan input dari pengguna atau tidak. Nilai yang diterima adalah `true` atau `false`.
-* `timer` (boolean): Menentukan apakah notifikasi yang muncul akan hilang secara otomatis setelah waktu tertentu atau tidak. Nilai yang diterima adalah `true` atau `false`.
-* `message` (boolean): Menentukan apakah teks pesan notifikasi ingin ditampilkan atau tidak. Nilai yang diterima adalah `true` atau `false`.
+* `timer` (int): Menentukan apakah notifikasi yang muncul akan hilang secara otomatis setelah waktu tertentu atau tidak. Nilai yang diterima adalah `int`.
+* `message` (String): subtext dibawah text seperti deskripsi.
 * `button` (boolean): Menentukan apakah tombol aksi notifikasi ingin ditampilkan atau tidak. Nilai yang diterima adalah `true` atau `false`.
 
 Contoh penggunaan: 
@@ -22,12 +22,20 @@ Contoh penggunaan:
 Noticme.any({
   text: "Ini adalah pesan notifikasi",
   type: "success",
-  color: "default",
-  icon: "default",
-  multiple: false,
-  confirm: false,
-  input: false,
-  timer: true,
-  message: true,
+  timer: 500, //ms
   button: true
 })
+
+
+```js
+Noticme.any({
+  text: "Ini adalah pesan notifikasi dengan konfirmasi",
+  type: "danger",
+  color: "red",
+  icon: "info",
+  confirm: true,
+  message: "pilihannmu menentukan dirimu",
+}).then (response => {
+  //gunakan variable response yang merupakan input dari user
+})
+
